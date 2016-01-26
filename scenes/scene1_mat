@@ -1,0 +1,65 @@
+Camera {
+	position 0.0 0.0 100.0
+	focus 0.0 0.0 0.0
+	up 0.0 1.0 0.0
+}
+Perspective {
+	distance 10.0
+	fov 40
+        aspect 1
+}
+Background {
+	color 100 100 100
+}
+Lights {
+        ambientPower 0.5
+        numObjects 1
+        Spot {
+            pos 30.0 -30.0 0.0
+            view 0.0 0.0 0.0
+            power 1
+            angle 90
+        }
+}
+Group {
+	numObjects 3
+	Sphere {
+		center 0.0 0.0 0.0
+		radius 5.0
+                Phong {
+                    ka 125 0 0
+                    ks 0 125 0
+                    kd 0 0 125
+                    especular 1
+                    Blinn {
+                        q 10
+                    }
+                }
+	}
+        Sphere {
+		center 15.0 0.0 0.0
+		radius 5.0
+                Phong {
+                    ka 0 200 0
+                    ks 0 125 0
+                    kd 0 250 0
+                    especular 1
+                    Blinn {
+                        q 10
+                    }
+                }
+	}
+        Sphere {
+		center 0.0 -15.0 0.0
+		radius 5.0
+                Phong {
+                    ka 0 0 200
+                    ks 0 0 125
+                    kd 0 0 150
+                    especular 1
+                    Blinn {
+                        q 0.5
+                    }
+                }
+	}
+}
